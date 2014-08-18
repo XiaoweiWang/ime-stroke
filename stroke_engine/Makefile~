@@ -1,0 +1,28 @@
+EMSCRIPTEN_HOME=~/emscripten/emsdk-portable/emscripten/master
+
+.PHONY: all clean test
+
+all: test
+
+test: engine_test.js
+#test: engine_test.html
+
+engine_test.js: engine_test.bc builtTree.txt
+	~/emscripten/emsdk-portable/emscripten/master/em++ engine_test.bc -O3 --preload-file builtTree.txt -s \
+	EXPORTED_FUNCTIONS="['_testStrokeSearch']" \
+	-o $@
+
+#engine_test.html: engine_test.bc builtTree.txt
+#	~/emscripten/emsdk-portable/emscripten/master/em++ engine_test.bc -O3 --preload-file builtTree.txt -s \
+#	EXPORTED_FUNCTIONS="['_testStrokeSearch']" \
+#	-o $@
+
+
+engine_test.bc: arrayTernaryTree.cpp strokeSearch.cpp main.cpp
+	~/emscripten/emsdk-portable/emscripten/master/em++ -O3 strokeSearch.cpp arrayTernaryTree.cpp main.cpp -o $@
+
+clean:
+	rm -f *.model* *.s
+	rm -f *.bc
+	rm -f *.js *.data *.js.map
+	rm -f *.o
