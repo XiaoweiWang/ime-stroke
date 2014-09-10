@@ -154,6 +154,12 @@ void TernarySearchTree::getInitHeap(int16 index, const char*key)
 		insert( nodes[index].freq, index);
 		return;
 	}
+	// if the character 'x' is matched, ignore the following characters in the inquery stroke
+	if(nodes[index].splitChar == 'x')
+	{
+		insert(nodes[nodes[index].mid].freq,nodes[index].mid);
+		return;
+	}
 	// vague search left
 	if( *key == '?' || *key < nodes[index].splitChar)
 	{
@@ -249,6 +255,21 @@ void TernarySearchTree::vagueSearch(const char*key, size_t k)
 		// get new highest frequency node
 		index = delete_max();
 		++candidateCount;
+	}
+	if(preciseCount)
+	{
+		for(size_t i = 0; i <candidateCount; i++)
+		{
+			if(candidateIndex[i] ==preciseIndex[0])
+			{
+				for(size_t j = i; j >0 ; j--)
+				{
+					candidateIndex[j] = candidateIndex[j-1];
+				}
+				candidateIndex[0] = preciseIndex[0];
+				break;
+			}
+		}
 	}
 	return;
 }

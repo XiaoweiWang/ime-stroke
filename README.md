@@ -22,7 +22,7 @@ In the phrase dictionary, the first file contains phrases whose first character 
 If a new character or a new phrase is to be added, it should be inserted at the right position of the files according to its frequency.
 
 Default dictionaries included are as follows:
-1. Character dictionary: *dictSeF_F1.txt*, *dictSeF_F2.txt*, *dictC_F1.txt*, *dictC_F2.txt*.
+1. Character dictionary: *dictSecF_F1.txt*, *dictSecF_F2.txt*, *dictC_F1.txt*, *dictC_F2.txt*.
 2. Phrase dictionary: *num16bit1.txt*, *num16bit2.txt*, *str1.txt*, *str2.txt*.
 
 Run function strokeDictBuild (defined in strokeDictBuild.cpp) to construct and save the tree file for single character searching.
@@ -31,6 +31,7 @@ Run function assocDictBuild (defined in assocDictBuild.cpp) to construct and sav
 To search for single characters, input strokes should consist of characters "h", "s", "p", "n", "z", or "?".
 The search result contains characters of the highest frequency that have the matching prefix with the inquery stroke string.
 The search guarantees that the fully matched results appear in the output array even if their word frequency is not high enough.
+The first candidate is the fully matched character with the highest frequency, if there is any.
 
 To search for phrases, input keywords should be an array of unicode values of characters.
 Results consists of words that ensue the inquery words. The words are arranged in an array. The maximum length of characters in a output word is preset.

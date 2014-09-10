@@ -25,6 +25,7 @@ int strokeSearchInit()
 	return 0;
 }
 
+// function argument "outputArray" should be an empty array
 int strokeSearchSearch(const char* keyword,size_t maxCandidateNum,char16*outputArray)
 {
 	if(keyword == NULL) {return -1;}
