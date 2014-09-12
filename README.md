@@ -1,14 +1,14 @@
-ime-stroke
-==========
-chinese ime - stroke
+#ime-stroke
+
+###chinese ime - stroke
 
 The "ime-stroke" is a simplified Chinese input method using strokes of the Chinese characters.
 
 The main data structure applied in the search is improved ternary search tree, which is useful in prefix match search.
 
 The search method requires 2 dictionaries:
-1. Chinese character dictionary with their stroke order and sorted by frequency.
-2. Chinese phrase dictionary sorted by frequency.
+* Chinese character dictionary with their stroke order and sorted by frequency.
+* Chinese phrase dictionary sorted by frequency.
 
 The raw character dictionary with stroke is *stroke.dict.yaml*, released under BSD license:
 https://github.com/lotem/brise/blob/master/AUTHORS#L27.
@@ -22,8 +22,8 @@ In the phrase dictionary, the first file contains phrases whose first character 
 If a new character or a new phrase is to be added, it should be inserted at the right position of the files according to its frequency.
 
 Default dictionaries included are as follows:
-1. Character dictionary: *dictSecF_F1.txt*, *dictSecF_F2.txt*, *dictC_F1.txt*, *dictC_F2.txt*.
-2. Phrase dictionary: *num16bit1.txt*, *num16bit2.txt*, *str1.txt*, *str2.txt*.
+* Character dictionary: *dictSecF_F1.txt*, *dictSecF_F2.txt*, *dictC_F1.txt*, *dictC_F2.txt*.
+* Phrase dictionary: *num16bit1.txt*, *num16bit2.txt*, *str1.txt*, *str2.txt*.
 
 Run function strokeDictBuild (defined in strokeDictBuild.cpp) to construct and save the tree file for single character searching.
 Run function assocDictBuild (defined in assocDictBuild.cpp) to construct and save the tree file for phrases searching.
@@ -37,3 +37,11 @@ To search for phrases, input keywords should be an array of unicode values of ch
 Results consists of words that ensue the inquery words. The words are arranged in an array. The maximum length of characters in a output word is preset.
 
 Ensure that the files *builtTree1.txt*, *builtTree2.txt*, *builtTreeDict1.txt*, *builtTreeDict2.txt* exist before searching.
+
+##Run
+
+Make a copy of all files in one directory. On Windows operating systems, include all .cpp and .h files in an project, compile and run. This should give results in a console window.
+
+##License
+
+The project "ime-stroke" is available under the Apache License, Version 2.0.

@@ -1,3 +1,5 @@
+# This part is for converting code to JavaScript using emscripten.
+
 EMSCRIPTEN_HOME=~/emscripten/
 .PHONY: all clean
 
