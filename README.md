@@ -40,7 +40,11 @@ Ensure that the files *builtTree1.txt*, *builtTree2.txt*, *builtTreeDict1.txt*, 
 
 ##Run
 
-Make a copy of all files in one directory. On Windows operating systems, include all .cpp and .h files in an project, compile and run. This should give results in a console window.
+Make a copy of the directory.
+
+On Linux operating systems, go to the "stroke-engine/" directory ,run *make test_stroke*, and run *./test_stroke search_stroke*, in which you can replace *search_stroke* with any valid stroke string, e.g. "pz", "n", "h?p". The running time for a 10,000-time-repeated search will be shown (in seconds).
+
+On Windows operating systems, include all .cpp and .h files in an project, compile and run. This should give results in a console window.
 
 ##License
 
