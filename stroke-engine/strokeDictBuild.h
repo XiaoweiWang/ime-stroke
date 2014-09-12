@@ -2,6 +2,7 @@
 #define STROKE_DICT_BUILD_H
 
 #include <iostream>
+#include <stdio.h>
 #include "strokeTernaryTree.h"
 
 #define STROKE_DICT_STROKE_1 "dictSecF_F1.txt"

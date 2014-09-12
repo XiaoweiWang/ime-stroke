@@ -1,5 +1,6 @@
 #include <iostream>
 #include <time.h>
+#include <string.h>
 #include "strokeTernaryTree.h"
 #include "strokeDictBuild.h"
 #include "strokeSearch.h"
@@ -44,16 +45,16 @@ void testAssocSearch(char16*keyword, char16*resultArray)
 int main(int argc, char* argv[]) {
 
 	//Stroke search for single character.
-	char stroke[256] = "szpn";
+	char stroke[256] = "pz";
 	if (argc > 1) {
 	  strncpy(stroke, argv[1], 256);
 	}
 	char16 output [100]={};
 	//int successStrokeBuild1 = strokeDictBuild(STROKE_DICT_STROKE_1, STROKEC_DICT_CHAR_1,STROKE_FILE_1);
 	//int successStrokeBuild2 = strokeDictBuild(STROKE_DICT_STROKE_2, STROKEC_DICT_CHAR_2,STROKE_FILE_2);
-	strokeSearchInit();
-	strokeSearchSearch(stroke,50,output);
-	//testStrokeSearch(stroke,output);
+	//strokeSearchInit();
+	//strokeSearchSearch(stroke,50,output);
+	testStrokeSearch(stroke,output);
 
 	//Associative search for phrases.
 	char16 keyword[6] = {19981,26159,0,0,0,0};

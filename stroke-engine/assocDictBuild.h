@@ -2,6 +2,7 @@
 #define	ASSOC_DICT_BUILD_H
 
 #include <iostream>
+#include <stdio.h>
 #include "assocTernaryTree.h"
 
 //#define MAX_PHRASE_DICT_LEN 50000
